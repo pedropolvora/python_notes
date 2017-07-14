@@ -1,8 +1,5 @@
 ## Beyond Python Basics
 
-
-
-
 #### Packages vs Modules
 
 In a nutshell, a package is a folder, module is a file.
@@ -43,3 +40,4 @@ path_entry/
  |---my_package/
       |---__init__.py
 ```
+when you import `my_package` the `__init__.py` is executed.
