@@ -79,4 +79,22 @@ The `__all__` attribute should be a list of strings, they contain all the names 
 If `__all__` is not imported then all the public names are imported
 
 
+### Namespace packages
+
+Namespace packages are essentially a package spread accross different directories. 
+
+They don't  have `__init__.py`, nothing is executed when the it's imported, so that questions of initialization order are avoided.
+
+##### How import works
+
+Consider `import foo`
+
+1. Scanning of sys.path
+1. If `__init__.py`, a normal package is imported
+1. If the file `foo.py` is found, then it's loaded
+1. Otherwise, all matching dires are considered parts of the package.
+
+
+### Executable Directories
+
 
