@@ -97,4 +97,4 @@ Consider `import foo`
 
 ### Executable Directories
 
-
+You can pass a path to python `python dir_path`, but to have it actually execute the directory you must create a `__main__.py` file.
