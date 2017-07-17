@@ -47,3 +47,38 @@ The differences between a normal function vs a lambda:
 * lambdas have a single expression, and use no return
 * lambdas are very hard if not impossible to test
 
+### Extended Argument Syntax
+
+
+Consider this example,
+```python
+def hypervolumen(*lengths):
+    print(type(lengths))    # will return tuple
+    i = iter(lengths)
+    v = next(i)
+    for length in i:
+        v *= length
+    return v
+```
+In addition to the `*args` we can have arbitrary keyword arguments `**kwargs`.
+
+```python
+def tag(name, **attributes):
+    print(type(attributes))     # will return dict
+    result = '<' + name
+    for key, value in attributes.items():
+        result += ' {k}="{v}"'.format(k=key, v=value))
+    result += '>'
+    return result 
+```
+
+Some rules:
+    * we must always have `*args` before `**kwargs` 
+    * any arguments before `*args` are required positional arguments
+    * any arguments after `*args` are required keyword arguments
+    * `**kwargs` must be in the end of the declaration 
+
+```python
+def extended_args(p1, p2, *args, k1, k2, **kwargs):
+    .......
+```
