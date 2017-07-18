@@ -37,3 +37,38 @@ global param local
 >>>
 ```
 
+## Closures
+
+
+A closure is how does a local function presevers the encolsing scope once it's called and the enclosing scope no longer exists.
+In the example bellow, it's how the `inner` function preservers the reference of `x`.
+It's like the local function closes over the arguments in need preventing them from being garbage collected.
+
+```python
+def outer():
+    x = 10
+
+    def inner(y):
+        return x + y
+
+    return inner
+
+i = outer()
+```
+You can access the closure by `i.__closure__`. ( using the example above).
+
+
+### Function Factory
+
+A function that returns new specialized function depending on the enclosing context.
+
+```python
+>>> def sum_to(x):
+...     def inner(y):
+...             return x + y
+...     return inner
+...
+>>> sum2 = sum_to(2)
+>>> sum2(3)
+5
+```
