@@ -104,3 +104,16 @@ g= 68
 b= 120
 {'alpha': 52}
 ```
+### Forwarding arguments
+
+We can use both extended call arguments and extended arguments to produce a more functional/callback style of code. I.e. forwarding arguments into other functions.
+
+
+```python
+def original_function(new_function, *args, **kwargs):
+    result = new_function(*args, **kwargs)
+    return result
+```
+
+
+
