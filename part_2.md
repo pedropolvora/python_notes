@@ -114,6 +114,10 @@ def original_function(new_function, *args, **kwargs):
     result = new_function(*args, **kwargs)
     return result
 ```
+#### Bonus: transposing tables
 
-
-
+```python
+table=[['a','b','c'],['d','e','f']]
+transposed =list(zip(*table))
+# transposed = [('a', 'd'), ('b', 'e'), ('c', 'f')]
+```
